@@ -1,0 +1,148 @@
+.buy-link {
+  float: left;
+  width: 100%;
+  padding-top: 0;
+  text-align: center;
+  @include border-radius(8px);
+  height: 60px;
+  background-color: #e92b2b;
+}
+
+.buy-box {
+  display: table;
+  color: #fff;
+  background-color: #ff8501;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.14);
+  @include background-image(linear-gradient(bottom, #ff8501 22.2%, #ffa700 172.2%));
+//  @include background-clip(padding-box);
+  padding: 0px 0;
+  width: 100%;
+  overflow: hidden;
+  height: 60px;
+  @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.14));
+  @include border-radius(8px);
+  &__featured {
+    width: 100%;
+    height: 60px;
+    @include border-radius(0 0 16px 16px / 0 0 71px 71px);
+    @include background-clip(padding-box);
+    background-color: #ff2f2f;
+    @include background-image(linear-gradient(bottom, #ff2f2f 22.2%, #ff4e4e 172.2%));
+  }
+
+  >a {
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    background: none;
+    height: auto;
+    width: 100%;
+    line-height: 15px;
+    font-size: 15px;
+    margin-top: 10px;
+    strong {
+      font-size: 25px;
+      font-family: 'pf_square_sans_probold', sans-serif;
+    }
+
+  }
+  .buy-box-info {
+    float: right;
+    height: auto;
+    background: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 18px;
+    position: relative;
+    > span {
+      font-size: 15px;
+      white-space: nowrap;
+      display: inline-block;
+      padding-top: 4px;
+      font-weight: bold;
+      a {
+        font-size: 6px;
+        color: #fff;
+        padding-left: 5px;
+        line-height: 18px;
+        float: none;
+        width: auto;
+        display: inline-block;
+        span {
+          border-bottom: 1px dotted #fff !important;
+          font-size: 12px;
+          font-weight: normal;
+          line-height: 18px;
+          margin-right: 4px;
+          color: #fff;
+          font-family: "PFSquareSansPro", sans-serif;
+          @include text-shadow(0 1px 0 rgba(0, 0, 0, .14));
+        }
+        &:hover span {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.buy_link_slider, .buy_link_slider__big {
+  float: left;
+  position: relative;
+  background-color: #443f26;
+  width: 260px;
+  height: 60px;
+  margin-left: 15px;
+  @include border-radius(10px);
+  overflow: visible;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.14);
+  display: inline-block;
+  padding: 0 35px;
+  margin-top: 22px;
+  border: none;
+  &__big {
+    max-width: 725px;
+    width: 100%;
+    display: block;
+    margin: 25px auto;
+    float: none;
+    height: 60px;
+    ul li {
+      width: 212px;
+      .buy-link .buy-box {
+      }
+    }
+  }
+  .jcarousel {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 22px;
+    height: new-sprite-height(prev_blue);
+    width: new-sprite-width(prev_blue);
+    text-indent: -9999px;
+  }
+  .prev {
+    left: 5px;
+    @include new-sprite(prev_blue);
+  }
+  .next {
+    right: 5px;
+    @include new-sprite(next_blue);
+  }
+  li {
+    overflow: hidden;
+    width: 190px;
+    height: 60px;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative;
+    @include border-radius(8px);
+  }
+}

@@ -1,0 +1,406 @@
+
+/* @media */
+@media only screen and (max-width: 1279px) {
+  .text-content {
+    display: none;
+  }
+  .bg-content {
+    overflow: hidden;
+    width: auto;
+    float: none;
+    margin-right: 0;
+    padding: 24px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .result-table-content .group .box-link {
+    left: 50%;
+    margin-left: -100px;
+  }
+  .buy_link_slider.slider {
+    left: 50%;
+    margin-left: -130px;
+    top: -15px;
+    margin-bottom: 20px;
+  }
+  #logo {
+    top: 5px;
+  }
+  #header .nav {
+//    left: 10px;
+//    top: 62px;
+  }
+  .result-table-content {
+    .group .holder {
+      background: none;
+    }
+    .info-flight {
+      width: 70%;
+    }
+    .company-info {
+      background: none;
+      width: 30%;
+    }
+    .buy-link {
+      width: 100%;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      text-align: left;
+//      background: url(../images/bg/bg-result-item.png) repeat-x, url(../images/bg/bg-result-item.png) repeat-x 0 100%;
+      padding-left: 13px;
+      margin-left: -13px;
+    }
+  }
+  .group-there-back .items .item {
+    &:first-child .buy-link {
+      display: none;
+    }
+    .buy-link {
+      height: 206px;
+    }
+  }
+  .group .group-slider {
+    bottom: 50px;
+    top: auto;
+    right: auto;
+    left: 50%;
+    margin-left: -117px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .filter-form {
+    .row {
+      width: 50%;
+    }
+    .row:first-of-type {
+      width: 100%;
+      text-align: center;
+    }
+
+    .filter-link {
+      display: table;
+      margin: 0 auto;
+    }
+  }
+  #footer .copy, .bottom-panel {
+    display: none;
+  }
+  #header .nav {
+//    left: 50%;
+//    margin-left: -263px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .feedback {
+    top: 5px;
+  }
+  #footer .newsletter {
+    p {
+      display: none;
+    }
+    padding-left: 17px;
+    .holder {
+      width: 100%;
+    }
+    input {
+      &[type='submit'] {
+        position: absolute;
+        float: none;
+        right: 0;
+      }
+      &[type='text'] {
+        width: 96%;
+        padding: 5px 2%;
+        float: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 864px) {
+  .bg-content {
+    display: none;
+  }
+  #tab-block {
+    max-width: 100%;
+    @include border-radius(0px);
+  }
+  .brands-slider {
+    @include border-radius(0px);
+  }
+  .prices-companies-slider, .companies-slider {
+    float: none;
+    margin: 0 auto 15px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #search-form {
+    width: auto;
+    float: none;
+    padding-bottom: 70px;
+
+  }
+
+  .filter-form .row {
+    width: 100% !important;
+    text-align: center;
+    .select-set {
+      display: table;
+      margin: 0 auto;
+    }
+    .direct-flights {
+      display: table;
+      margin: 0 auto;
+      float: none;
+      margin-top: 25px;
+    }
+  }
+  .feedback {
+    right: auto;
+    left: 50%;
+    top: 30px;
+    margin-left: -82px;
+  }
+  #logo {
+    top: 31px;
+  }
+  #header .nav {
+    display: none;
+  }
+  .slicknav_menu {
+    display: block;
+  }
+  #search-form .search-form-submit {
+    bottom: -80px;
+    right: 50%;
+    margin-right: -100px;
+    border-color: #f2f2f2;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .group-slider__big, .buy_link_slider__big {
+    width: 640px !important;
+    display: block !important;
+    margin: 25px auto !important;
+    @include box-sizing(border-box);
+    li {
+      width: 300px;
+    }
+    .logo-company .image {
+      width: 300px;
+    }
+  }
+  .buy_link_slider__big ul li, .buy_link_slider__big__big ul li {
+    width: 270px !important;
+  }
+
+  .show-all-modal {
+    width: 100%;
+    left: 0;
+  }
+  #flights .search-route {
+    width: 67%;
+  }
+  #flights .search-date {
+    margin-right: 0;
+    width: 30%;
+  }
+  #flights .holder-flights, #flights .bottom-line {
+    margin-right: 0;
+  }
+  .search-places {
+    margin: 0;
+    width: 30%;
+  }
+
+  .search-people {
+    width: 70%;
+    float: left;
+  }
+
+}
+
+@media only screen and (max-width: 670px) {
+  .additional-services .title {
+    padding-left: 10px;
+    background-image: none;
+  }
+  .landing_page .active_indicator .step {
+    width: 100% !important;
+  }
+  .landing_page .active_indicator .step__num i {
+    float: left;
+    margin-top: 13px;
+    position: relative;
+    left: 5px;
+  }
+  .landing_page .active_indicator .step__desc {
+    width: 70%;
+    float: left;
+  }
+
+  .search-people .counter {
+    width: 28%;
+  }
+  .group-slider__big, .buy_link_slider__big {
+    width: 320px !important;
+    display: block !important;
+    margin: 25px auto !important;
+    @include box-sizing(border-box);
+    li {
+      width: 300px;
+    }
+    .logo-company .image {
+      width: 300px;
+    }
+  }
+  .buy_link_slider__big ul li, .buy_link_slider__big__big ul li {
+    width: 250px !important;
+  }
+
+}
+
+@media only screen and (max-width: 620px) {
+
+  #tabset a {
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #tab-block {
+    padding: 0 22px 50px 58px;
+  }
+  #flights {
+    .search-date {
+      width: auto;
+      float: none;
+      margin: 0;
+    }
+    .search-route {
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+  .date-check {
+    bottom: 18px;
+  }
+  .search-people {
+    width: 100%;
+    .counter {
+      width: 29%;
+
+    }
+  }
+  .date-check label.ui-button {
+    bottom: 17px;
+  }
+  #flights .search-date .date-box.last-child input[type="text"] {
+    width: 61%;
+  }
+  #flights {
+    .search-date .datepicker {
+      width: 85%;
+    }
+    .search-places {
+      width: 96%;
+      float: none;
+      margin-right: 0;
+    }
+  }
+  #tab-block .holder {
+    padding: 0 10px 21px 10px;
+  }
+  #flights {
+    .holder-flights, .bottom-line {
+      margin: 0;
+    }
+  }
+  .result-table-content .route-information {
+    dt, dd {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .service-options .and-from input[type="text"] {
+    width: 100%;
+  }
+  .landing_page .polls label {
+    font-size: 18px !important;
+  }
+  .additional-services .title label.ui-button {
+    font-size: 18px;
+  }
+  #tab-block {
+    padding: 0 22px 50px 0px;
+  }
+  .top-panel {
+    padding-left: 0;
+  }
+  #tabset li {
+    margin: 0;
+    a {
+      padding: 0 5px;
+      em {
+        width: 27px;
+      }
+    }
+  }
+  #flights .search-date {
+    width: 102%;
+  }
+  #flights .search-places {
+    width: 100%;
+  }
+  #logo {
+    top: 5px;
+  }
+  .feedback {
+    left: 11px;
+    bottom: 6px;
+    top: auto;
+    margin: 0;
+  }
+
+  .result-table-content {
+    .items {
+      .item {
+        .info-flight {
+          width: 100%;
+          > div {
+            display: inline-block;
+            vertical-align: top;
+            width: 25%;
+            float: left;
+          }
+        }
+        .company-info {
+          width: 100%;
+          float: left;
+          position: relative;
+          dd, dt {
+            width: 23%;
+            float: left;
+          }
+          img {
+            position: absolute;
+            right: 30px;
+            bottom: 5px;
+          }
+        }
+        .slider {
+
+        }
+      }
+    }
+  }
+}

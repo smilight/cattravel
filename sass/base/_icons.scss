@@ -1,0 +1,393 @@
+%icon-inline {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+%icon-left {
+    display: inline-block;
+    float: left;
+}
+
+%icon-right {
+    display: inline-block;
+    float: right;
+}
+
+%head {
+    text-indent: -99999em;
+    margin-left: 20px !important;
+}
+
+@mixin iconsfull($icon_name) {
+    @include new-sprite($icon_name);
+    height: new-sprite-height($icon_name);
+    width: new-sprite-width($icon_name);
+}
+
+.icon_search {
+    @include iconsfull(icon-loupe);
+    @extend %icon-left;
+}
+
+.header {
+    &__desh {
+        @include new-sprite(desheviy);
+        height: new-sprite-height(desheviy);
+        @extend %head;
+    }
+    &__udob {
+        @include new-sprite(ydobn);
+        height: new-sprite-height(ydobn);
+        @extend %head;
+    }
+    &__tuda {
+        @include new-sprite(tuda);
+        height: new-sprite-height(tuda);
+        width: new-sprite-width(tuda);
+        @extend %head;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__obratno {
+        @include new-sprite(obratno);
+        height: new-sprite-height(obratno);
+        width: new-sprite-width(obratno);
+        @extend %head;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__all {
+        @include new-sprite(all);
+        height: new-sprite-height(all);
+        @extend %head;
+    }
+}
+
+.icon-lang {
+    &__ru {
+        @include iconsfull(rus);
+        @extend %icon-inline;
+    }
+    &__eng {
+        @include iconsfull(eng);
+        @extend %icon-inline;
+    }
+    &__chi {
+        @include iconsfull(china);
+        @extend %icon-inline;
+    }
+}
+
+.icon-social {
+    &__vk {
+        @include iconsfull(round-vk);
+        @extend %icon-inline;
+    }
+    &__face {
+        @include iconsfull(round-face);
+        @extend %icon-inline;
+    }
+    &__tweet {
+        @include iconsfull(round-tweet);
+        @extend %icon-inline;
+    }
+    &__odn {
+        @include iconsfull(round-odn);
+        @extend %icon-inline;
+    }
+}
+
+/* ribbon style */
+
+.ribbon-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    right: -5px;
+    border-top: 0px solid #ccc;
+    -moz-border-bottom-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.2);
+    -webkit-border-bottom-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.2);
+    -moz-border-top-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.2);
+    -webkit-border-top-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-front {
+    background-color: #ff2e31;
+    height: 25px;
+    width: 100%;
+    position: relative;
+    left: -2px;
+    z-index: 2;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+
+.ribbon-front,
+.ribbon-back-left,
+.ribbon-back-right {
+//    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+//    -khtml-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+//    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+//    -o-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+}
+
+.ribbon-edge-topleft,
+.ribbon-edge-topright,
+.ribbon-edge-bottomleft,
+.ribbon-edge-bottomright {
+    position: absolute;
+    z-index: 1;
+    border-style: solid;
+    height: 0px;
+    width: 0px;
+}
+
+.ribbon-edge-topleft,
+.ribbon-edge-topright {}
+
+.ribbon-edge-bottomleft,
+.ribbon-edge-bottomright {
+    top: 25px;
+}
+
+.ribbon-edge-topleft,
+.ribbon-edge-bottomleft {
+    left: -26px;
+    border-color: transparent #ff2e31 transparent transparent;
+}
+
+.ribbon-edge-topleft {
+    top: 0px;
+    border-width: 0px 26px 26px 0;
+}
+
+.ribbon-edge-bottomleft {
+    border-width: 0 0px 0px 0;
+}
+
+.ribbon-edge-topright,
+.ribbon-edge-bottomright {
+    right: 3px;
+    border-color: transparent transparent transparent #aa1e1f;
+}
+
+.ribbon-edge-topright {
+    top: 0px;
+    border-width: 0px 0 0 20px;
+}
+
+.ribbon-edge-bottomright {
+    border-width: 0 0 5px 5px;
+  z-index: -1;
+}
+
+.ribbon-back-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 80px;
+    z-index: 0;
+}
+
+//.ribbon-back-right {
+//    position: absolute;
+//    top: 10px;
+//    right: -10px;
+//    width: 10px;
+//    height: 80px;
+//    z-index: 0;
+//}
+
+.icon{
+  &__arrow{
+    &-big{
+      position: absolute;
+      left: -33px;
+      top: 42px;
+      @include new-sprite(arrow);
+      height: new-sprite-height(arrow);
+      width: new-sprite-width(arrow);
+
+      // @include icons-sprite(arrow);
+//      background: url(../images/arrow.png) no-repeat 0 0;
+//      width: 83px;
+//      height: 68px;
+    }
+    &-sm{
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      margin-top: -3px;
+      cursor: pointer;
+      @include new-sprite(options-pointer);
+      height: new-sprite-height(options-pointer);
+      width: new-sprite-width(options-pointer);
+    }
+  }
+
+  &__t-sm,&__v-sm,&__o-sm,&__f-sm,&__app_a-sm,&__app_an-sm,&__app_w-sm,&__app_w1-sm{
+    height: new-sprite-height(icon_social_f);
+    width: new-sprite-width(icon_social_f);
+    display: inline-block;
+//    @include transition(all .5s ease-in-out);
+  }
+
+  &__t-sm{
+    @include new-sprite(icon_social_t);
+    &:hover{
+      @include new-sprite(icon_social_t_g);
+    }
+  }
+  &__v-sm{
+    @include new-sprite(icon_social_v);
+    &:hover{
+      @include new-sprite(icon_social_v_g);
+
+    }
+  }
+  &__o-sm{
+    @include new-sprite(icon_social_o);
+    &:hover{
+      @include new-sprite(icon_social_o_g);
+    }
+  }
+  &__f-sm{
+    @include new-sprite(icon_social_f);
+    &:hover{
+      @include new-sprite(icon_social_f_g);
+    }
+  }
+
+
+  &__app_a-sm{
+    @include new-sprite(icon__app_a-sm_g);
+    &:hover{
+      @include new-sprite(icon__app_a-sm);
+    }
+  }
+  &__app_an-sm{
+    @include new-sprite(icon__app_an-sm_g);
+    &:hover{
+      @include new-sprite(icon__app_an-sm);
+    }
+  }
+  &__app_w-sm{
+    @include new-sprite(icon__app_w-sm_g);
+    &:hover{
+      @include new-sprite(icon__app_w-sm);
+    }
+  }
+  &__app_w1-sm{
+    @include new-sprite(icon__app_w1-sm_g);
+    &:hover{
+      @include new-sprite(icon__app_w1-sm);
+    }
+  }
+
+  &__calendar{
+    @include new-sprite(icon-data);
+    height: new-sprite-height(icon-data);
+    width: new-sprite-width(icon-data);
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    cursor: pointer;
+    top: 17px;
+  }
+
+  &__tab_sea,
+  &__tab_car,
+  &__tab_fly,
+  &__tab_house,
+  &__tab_case,
+  &__tab_train,
+  &__tab_car1,
+  &__tab_palm,
+  &__tab_card{
+    height: new-sprite-height(icon__tab_car);
+    width: new-sprite-width(icon__tab_car);
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+  }
+
+  &__tab_sea{@include new-sprite(icon__tab_sea);}
+  &__tab_car{@include new-sprite(icon__tab_car);}
+  &__tab_fly{@include new-sprite(icon__tab_fly);}
+  &__tab_house{@include new-sprite(icon__tab_house);}
+  &__tab_case{@include new-sprite(icon__tab_case);}
+  &__tab_train{@include new-sprite(icon__tab_train);}
+  &__tab_car1{@include new-sprite(icon__tab_car1);}
+  &__tab_palm{@include new-sprite(icon__tab_palm);}
+  &__tab_card{@include new-sprite(icon__tab_card);}
+
+  &__show-more{
+    &_blue{
+      @include new-sprite(arrow4);
+      height: new-sprite-height(arrow4);
+      width: new-sprite-width(arrow4);
+      display: inline-block;
+      margin-left: 2px;
+    }
+  }
+
+  &__tab_l_sea,
+  &__tab_l_car,
+  &__tab_l_taxy,
+  &__tab_l_office,
+  &__tab_l_palm,
+  &__tab_l_card{
+    height: new-sprite-height(icon__tab_l_sea);
+    width: new-sprite-width(icon__tab_l_sea);
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    float: left;
+    margin-right: 30px;
+  }
+
+  &__tab_l_sea{@include new-sprite(icon__tab_l_sea);}
+  &__tab_l_car{@include new-sprite(icon__tab_l_car);}
+  &__tab_l_taxy{@include new-sprite(icon__tab_l_taxy);}
+  &__tab_l_office{@include new-sprite(icon__tab_l_office);}
+  &__tab_l_palm{@include new-sprite(icon__tab_l_palm);}
+  &__tab_l_card{@include new-sprite(icon__tab_l_card);}
+
+
+  &__fly_blue,&__fly_orange{
+    height: new-sprite-height(fly1);
+    width: new-sprite-width(fly1);
+    display: block !important;
+    margin: 0 auto;
+  }
+  &__fly_blue{@include new-sprite(fly1);}
+  &__fly_orange{@include new-sprite(fly2);}
+
+
+  &__paperfly{
+          @include new-sprite(icon-paper-airplane);
+    height: new-sprite-height(icon-paper-airplane);
+    width: new-sprite-width(icon-paper-airplane);
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    left: 10px;  }
+  &__moneybox{
+            @include new-sprite(icon-moneybox);
+    height: new-sprite-height(icon-moneybox);
+    width: new-sprite-width(icon-moneybox);
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    left: 10px;  }
+    }
+
+

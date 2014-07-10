@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--[if gt IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АВИО</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!--<link rel="stylesheet" type="text/css" href="styles/components/bootstrap.min.css"/>-->
+    <link rel="stylesheet" type="text/css" href="styles/components/jquery-ui-1.9.2.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+<body>
+<div id="wrapper">
+<div id="header" class="b-header">
+    <div class="b-header__inner holder">
+        <a href="#" id="logo" class="logo__main"><span>АВИО</span>билеты</a>
+
+        <div class="feedback">
+            <div class="feedback__phone">
+                <span class="feedback__code">8 800</span> 800 35 10
+            </div>
+            <a class="feedback__link" href="#">Написать директору</a>
+        </div>
+        <ul class="b-nav nav nav-pills">
+            <li class="b-nav__item"><a class="b-nav__link" href="#">Поиск</a></li>
+            <li class="b-nav__item"><a class="b-nav__link" href="#">О проекте</a></li>
+            <li class="b-nav__item active"><a class="b-nav__link" href="#">Блог</a></li>
+            <li class="b-nav__item"><a class="b-nav__link" href="#">Вопросы и ответы</a></li>
+            <li class="b-nav__item">
+                <select class="b-input_select currency" name="curencySelect" id="curencySelect">
+                    <option value="1">Рубли</option>
+                    <option value="2">Доллары</option>
+                    <option value="3">Евро</option>
+                </select>
+            </li>
+
+            <li class="b-nav__item b-dropdown b-dropdown_small language">
+                <i class="icon__arrow-sm"></i>
+                <span class="b-dropdown__header"><i class="icon-lang__ru"></i>Rus</span>
+                <ul class="b-dropdown__list">
+                    <li class="b-dropdown__item">
+                        <a class="b-dropdown__link" href="#" data-lang='ru'><i class="icon-lang__ru"></i>Rus</a>
+                    </li>
+                    <li class="b-dropdown__item">
+                        <a class="b-dropdown__link" href="#" data-lang='en-GB'><i class="icon-lang__eng"></i>Eng</a>
+                    </li>
+                    <li class="b-dropdown__item">
+                        <a class="b-dropdown__link" href="#" data-lang='zh-HK'><i class="icon-lang__chi"></i>China</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="bottom-panel">
+            <div class="bottom-panel__block">
+                <span class="bottom-panel__header">Приложения:</span>
+                <a class="icon__app_w-sm" href="#"></a>
+                <a class="icon__app_a-sm" href="#"></a>
+                <a class="icon__app_an-sm" href="#"></a>
+                <a class="icon__app_w1-sm" href="#"></a>
+            </div>
+            <div class="bottom-panel__block">
+                <span class="bottom-panel__header">Следите за нами в:</span>
+                <a class="icon__f-sm" href="#"></a>
+                <a class="icon__v-sm" href="#"></a>
+                <a class="icon__f-sm" href="#"></a>
+                <a class="icon__o-sm" href="#"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content">
+<form action="#" id="search-form" class="search-form">
+    <div class="top-panel">
+        <h2>Поиск</h2>
+        <ul class="already-flying nav nav-tabs">
+            <li>
+                <a href="#">
+                    <span>25.01</span>
+                    <strong>Киев<em>&harr;</em>Москва</strong>
+                </a>
+                <i class="close-icon"></i>
+            </li>
+            <li class="last">
+                <a href="#">
+                    <span>25.01</span>
+                    <strong>Киев<em>&harr;</em>Москва</strong>
+                </a>
+                <i class="close-icon"></i>
+            </li>
+        </ul>
+    </div>
+    <div id="tab-block" class="b-tabs__wrapper">
+        <ul id="tabset" class="b-tabs nav nav-tabs">
+            <li class="b-tabs__tab active"><a class="b-tabs__link" href="#flights" data-toggle="tab"><i
+                        class="icon__tab_fly"></i>Авиобилеты</a></li>
+            <li class="b-tabs__tab"><a class="b-tabs__link" href="#travel" data-toggle="tab"><i
+                        class="icon__tab_case"></i>Путешествия</a></li>
+            <li class="b-tabs__tab"><a class="b-tabs__link" href="#hotels" data-toggle="tab"><i
+                        class="icon__tab_house"></i>Отели</a></li>
+        </ul>
+        <div id="tab-content" class="tab-content">
+            <div id="flights" class="tab-pane active">
+                <span class="icon__arrow-big">&nbsp;</span>
+
+                <!-- new block -->
+                <div class="b-input b-input_long">
+                    <span class="b-input__error check-data">Проверьте правильность введенных вами данных!</span>
+                    <span class="b-input__code code"></span>
+                    <span class="b-input__clear remove_input"></span>
+                                    <span class="b-input__help city_or_air">Город или аэропорт:&nbsp;<a href="#">Новосибирск</a>,&nbsp;<a
+                                            href="#">Иркутск</a></span>
+                    <i class="input_icon__arrow"></i>
+                    <input class="b-input__input" type="text" placeholder="откуда">
+
+                    <!--                    <div class="b-input__list route-list dropdown">-->
+                    <!--                        <div class="b-route-list route-list-content">-->
+                    <!--                            <span class="b-route-list__header">Подходящие аэропоты или города</span>-->
+                    <!--                            <ul class="b-route-list__inner">-->
+                    <!--                                <li class="b-route-list__item">-->
+                    <!--                                    <span class="route-location"><span><span>Нов</span>осибирск</span>, Россия</span>-->
+                    <!--                                    <span class="code">OVB</span>-->
+                    <!--                                </li>-->
+                    <!--                                <li class="b-route-list__item">-->
+                    <!--                                    <span-->
+                    <!--                                        class="route-location"><span><span>Сан</span>кт-Петербург</span>, Россия</span>-->
+                    <!--                                    <span class="code">SPB</span>-->
+                    <!--                                </li>-->
+                    <!--                                <li class="b-route-list__item">-->
+                    <!--                                    <span class="route-location"><span><span>Мос</span>ква</span>, Россия</span>-->
+                    <!--                                    <span class="code">MSK</span>-->
+                    <!--                                </li>-->
+                    <!--                            </ul>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </div>
+
+                <div class="b-input b-input_middle">
+                    <i class="icon__calendar"></i>
+                    <input type="text" class="b-input__input datepicker" placeholder="когда">
+                    <span class="b-input__help">Дата вылета</span>
+                </div>
+
+                <div class="b-input b-input_long">
+                    <span class="b-input__error check-data">Проверьте правильность введенных вами данных!</span>
+                    <span class="b-input__code code"></span>
+                    <span class="b-input__clear remove_input"></span>
+                                    <span class="b-input__help city_or_air">Город или аэропорт:&nbsp;<a href="#">Новосибирск</a>,&nbsp;<a
+                                            href="#">Иркутск</a></span>
+                    <i class="input_icon__arrow"></i>
+                    <input class="b-input__input" type="text" placeholder="куда">
+
+                    <!--                    <div class="b-input__list route-list dropdown">-->
+                    <!--                        <div class="b-route-list route-list-content">-->
+                    <!--                            <span class="b-route-list__header">Подходящие аэропоты или города</span>-->
+                    <!--                            <ul class="b-route-list__inner">-->
+                    <!--                                <li class="b-route-list__item">-->
+                    <!--                                    <span class="route-location"><span><span>Нов</span>осибирск</span>, Россия</span>-->
+                    <!--                                    <span class="code">OVB</span>-->
+                    <!--                                </li>-->
+                    <!--                                <li class="b-route-list__item">-->
+                    <!--                                    <span-->
+                    <!--                                        class="route-location"><span><span>Сан</span>кт-Петербург</span>, Россия</span>-->
+                    <!--                                    <span class="code">SPB</span>-->
+                    <!--                                </li>-->
+                    <!--                                <li class="b-route-list__item">-->
+                    <!--                                    <span class="route-location"><span><span>Мос</span>ква</span>, Россия</span>-->
+                    <!--                                    <span class="code">MSK</span>-->
+                    <!--                                </li>-->
+                    <!--                            </ul>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </div>
+
+                <div class="b-input b-input_middle b-input__disabled">
+                    <input class="b-input__checkbox" checked type="checkbox" name="noname">
+                    <input type="text" class="b-input__input datepicker" placeholder="обратно">
+                    <i class="icon__calendar"></i>
+                    <span class="b-input__help">Дата возврата</span>
+                </div>
+
+                <div class="b-input b-input_small counter">
+                    <span class="b-input__incr">+</span>
+                    <span class="b-input__decr">-</span>
+                    <input id="counter1" class="b-input__input" type="text" value="3" disabled/>
+                    <i class="input_icon__man"></i>
+                    <span class="b-input__help">Взрослых</span>
+                    <span class="b-input__under-input">cтарше 12</span>
+                </div>
+
+                <div class="b-input b-input_small counter">
+                    <span class="b-input__incr">+</span>
+                    <span class="b-input__decr">-</span>
+                    <input id="counter2" class="b-input__input" type="text" value="3" disabled/>
+                    <i class="input_icon__kid"></i>
+                    <span class="b-input__help">Детей</span>
+                    <span class="b-input__under-input">от 2 до 5 лет</span>
+                </div>
+
+                <div class="b-input b-input_small counter">
+                    <span class="b-input__incr">+</span>
+                    <span class="b-input__decr">-</span>
+                    <input id="counter3" class="b-input__input" type="text" value="3" disabled/>
+                    <i class="input_icon__child"></i>
+                    <span class="b-input__help">Младенцев</span>
+                    <span class="b-input__under-input">до 2 лет</span>
+                </div>
+                <select class="b-input_select class" name="test" id="testasd">
+                    <option value="1">эконом</option>
+                    <option value="2">бизнес</option>
+                    <option value="3">перывй</option>
+                </select>
+
+            </div>
+            <div id="travel" class="tab-pane">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo
+                tenetur corporis quia commodi aliquid illo veritatis amet consequatur ad non.
+            </div>
+            <div id="hotels" class="tab-pane">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+                dolore blanditiis rem a deleniti enim nemo temporibus nulla neque est quisquam quasi totam nisi
+                pariatur sapiente voluptatum sint mollitia modi.
+            </div>
+        </div>
+        <div class="b-input b-input_submit search-form-submit">
+            <i class='icon_search'></i>
+            <!--            <input type="submit" class="b-input_submit__input" value="Найти"/>-->
+            <a href="results.html" class="b-input_submit__input">Найти</a>
+
+        </div>
+
+    </div>
+    <div class="brands-slider slider" style="display: none">
+        <div class="mask jcarousel">
+            <ul>
+                <li>
+                    <a href="#"><img src="images/logo01.png" alt="#" width="72" height="24"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo02.png" alt="#" width="48" height="36"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo03.png" alt="#" width="77" height="19"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo04.png" alt="#" width="67" height="28"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo01.png" alt="#" width="72" height="24"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo01.png" alt="#" width="72" height="24"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo02.png" alt="#" width="48" height="36"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo03.png" alt="#" width="77" height="19"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/logo04.png" alt="#" width="67" height="28"/></a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="prev jcarousel-control-prev">prev</a>
+        <a href="#" class="next jcarousel-control-next">next</a>
+    </div>
+</form>
+<div class="bg-content">
+    <img src="images/img1.png" alt="#" width="292" height="451"/>
+</div>
+<div class="text-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius beatae ex nemo architecto minus placeat magnam
+        suscipit fugiat itaque ducimus!</p>
+
+    <p>Asperiores recusandae quo voluptatibus maxime commodi quis voluptas ipsum neque. Consectetur dolorem nobis
+        eveniet nostrum mollitia ullam doloremque ab iusto.</p>
+
+    <p>Adipisci voluptatibus eum repellendus tempore mollitia nam nemo! Beatae vel dolores porro laudantium totam
+        debitis accusamus ab alias itaque sunt!</p>
+</div>
+</div>
+</div>
+<footer class="b-footer__wrapper">
+    <div class="b-footer">
+        <p class="b-footer__text"><span>Хотите получать наши самые свежие новости?</span> Подпишитесь на нашу
+            рассылку:</p>
+
+        <form action="#" class="b-footer__form">
+            <input class="b-footer__submit" type="submit" value="Отправить"/>
+            <input class="b-footer__input" type="text" placeholder="Подписаться на новости"/>
+        </form>
+
+        <p class="b-footer__copy">&copy; 2008 - 2013 Все права защищены. CatTravel</p>
+    </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+<script src="js/plugins/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="js/plugins/jquery.ui.datepicker-en-GB.min.js"></script>
+<script src="js/plugins/jquery.ui.datepicker-ru.min.js"></script>
+<script src="js/plugins/jquery.ui.datepicker-zh-HK.min.js"></script>
+<script src="js/plugins/jquery.slicknav.min.js"></script>
+<script src="js/plugins/jquery.jcarousel.min.js"></script>
+<script src="js/plugins/jquery.fs.selecter.min.js"></script>
+<!--<script src="js/plugins/chosen.jquery.min.js"></script>-->
+<script src="js/plugins/icheck.min.js"></script>
+<script src="js/plugins/jquery.jscrollpane.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.3.1/jquery.maskedinput.min.js"></script>
+<script src="js/main.js"></script>
+
+<!--[if gt IE 8]>
+<link rel="stylesheet" type="text/css" href="styles/ie.css"/>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script>$(function () {
+    Flycats.iefixes.init();
+})</script>
+<![endif]-->
+
+</body>
+</html>

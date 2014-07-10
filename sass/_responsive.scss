@@ -1,0 +1,93 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (max-width: 1025px) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (max-width: 961px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 769px) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (max-width: 461px) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 321px) {
+      @content;
+    }
+
+  }
+}
+.b-footer__wrapper {
+  @include breakpoint(laptop) {
+    .b-footer__form {
+    }
+    .b-footer__text {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+@include breakpoint(tablet) {
+  body{overflow-x: hidden;}
+  .b-footer__text {
+      display: none;
+  }
+  .search-form{
+    width: 100%;
+  }
+  .b-tabs__wrapper{
+    padding: 0;
+  }
+  .b-input_middle,.b-input_long{
+    width: 100%;}
+  .b-input_small{
+    width: 31%;}
+  .b-tabs__wrapper{
+    display: table;}
+  .bg-content,.text-content{
+    display: none;}
+  .b-header__inner {
+
+    .slicknav_menu {
+      display: block;
+    }
+    .bottom-panel, .b-nav {
+      display: none;
+      .selecter{
+        display: none;}
+    }
+    .feedback {
+      position: relative;
+      right: 11px;
+      top: 15px;
+      margin: 0 auto;
+      display: table;
+      padding-left: 40px;
+    }
+    .slicknav_menu .slicknav_btn {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+}
+
+
+
+
+@include breakpoint(phablet){
+  body, html{min-width: 100%;}
+  .b-input_small{width: 100%;}
+  .b-footer__input{
+    width: 70%;}
+  #content{
+    padding: 0;
+    margin-bottom: 100px;}
+}
+

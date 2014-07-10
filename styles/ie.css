@@ -1,0 +1,37 @@
+body, html { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFAF0C8', endColorstr='#FFFFFFFF'); }
+
+.b-input_submit { background-color: #fb8923; }
+
+.b-input_submit__input { background-color: transparent; }
+
+.b-footer { background-color: #ffa700; }
+.b-footer .b-footer__input { line-height: 15px; }
+
+.best-offer .link-buy { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9D00', endColorstr='#FFFF8601'); }
+
+.service-options input[type="button"] { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFA700', endColorstr='#FFFF8601'); }
+.service-options input[type="button"]:hover { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8601', endColorstr='#FFFFA700'); }
+
+.result-table .switch-dates > .active { position: relative; z-index: 1; border: none; }
+.result-table .buy-box { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9D00', endColorstr='#FFFF8801'); }
+
+.box-link-buy .link-buy > a { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9D00', endColorstr='#FFFF8801'); }
+
+.group .group-slider .buy { -moz-border-radius: 10px !important; -webkit-border-radius: 10px; border-radius: 10px !important; }
+.group .group-slider .buy a { background-color: #ff9d00; background-image: none; -moz-border-radius: 10px !important; -webkit-border-radius: 10px; border-radius: 10px !important; overflow: hidden; }
+.group .group-slider .buy a:hover { background-color: #ff8601; background-image: none; -moz-border-radius: 10px !important; -webkit-border-radius: 10px; border-radius: 10px !important; }
+
+.buy_link_slider__big ul li .buy-link .buy-box__featured, .buy_link_slider__big__big ul li .buy-link .buy-box__featured { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF4244', endColorstr='#FFFF3030'); }
+
+.polls label input { position: absolute; top: 0; left: 0; visibility: hidden; }
+.polls label input:checked + i:before { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9D00', endColorstr='#FFFF8801'); }
+
+.landing_page .brands-slider .next:hover, .landing_page .brands-slider .prev:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+
+#header.scrollable { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFEFCF3', endColorstr='#FFFFFEFA'); }
+
+.landing_page .last_block, .landing_page .buy_block, .landing_page .first_block, #lightbox-overlay { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFDF8E4', endColorstr='#FFFFFFFF'); }
+
+.buy-box__fautered { -moz-border-radius: 8px !important; -webkit-border-radius: 8px; border-radius: 8px !important; }
+
+.landing_page .last_block > *, .landing_page .buy_block > *, .landing_page .first_block > * { z-index: 1; position: relative; }

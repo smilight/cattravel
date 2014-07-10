@@ -1,0 +1,84 @@
+.b-footer{
+  max-width: 980px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  @include border-radius(16px);
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 65px;
+  padding: 0 17px 0 22px;
+  background: #ffa700;
+  @include background(linear-gradient(top, #ffa700 0%, #ff8601 100%));
+  &__wrapper{
+    margin-top: -96px;
+    height: 96px;
+  }
+  &__text{
+    float: left;
+    color: #fff;
+    line-height: 65px;
+    span{
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+  }
+  &__form{
+    float: right;
+    padding-top: 15px;
+    position: relative;
+    max-width: 310px;
+    width: 100%;
+  }
+  &__submit{
+    float: right;
+    position: relative;
+    z-index: 1;
+    padding: 0 13px;
+    margin: 0;
+    border: 3px solid #fff;
+    @include border-radius(10px);
+    outline: none;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 2.58;
+    height: 36px;
+    background: #ffa700;
+    @include background(linear-gradient(top, #ffa700 0%, #ff8601 100%));
+    &:hover{
+      @include background(linear-gradient(top, #ff8601 0%, #ffa700 100%));
+    }
+    &:active{
+      @include background(linear-gradient(top, #ffa700 0%, #ff8601 100%));
+    }
+  }
+  &__input{
+    height: 30px;
+    float: right;
+    max-width: 225px;
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 30px;
+    color: #535353;
+    @include input-placeholder {color: #535353;};
+    border: none;
+    padding: 5px 10px;
+    margin: 3px -10px 0 0;
+    @include box-shadow(0px 1px 0px 0px rgba(0, 0, 0, 0.14));
+    background-color: #fff;
+    display: inline-block;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    @include border-radius(7px);
+    outline: none;
+  }
+  &__copy{
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    color: #535353;
+
+  }
+
+}

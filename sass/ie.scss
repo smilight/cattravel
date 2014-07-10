@@ -1,0 +1,140 @@
+@import 'compass';
+
+
+body,html {
+  @include filter-gradient(#faf0c8, #ffffff, vertical);
+
+}
+
+.b-input_submit{
+  background-color: #fb8923;
+}
+.b-input_submit__input{
+  background-color: transparent;
+}
+
+.b-footer{
+  background-color: #ffa700;
+  .b-footer__input{
+    line-height: 15px;
+  }
+}
+
+.best-offer{
+  .link-buy {
+    @include filter-gradient(#ff9d00, #ff8601, vertical);
+  }
+
+  }
+
+.service-options {
+  input {
+    &[type="button"] {
+      @include filter-gradient(#ffa700, #ff8601, vertical);
+      &:hover {
+        @include filter-gradient(#ff8601, #ffa700, vertical);
+      }
+    }
+  }
+}
+
+.result-table {
+  .switch-dates {
+    > .active {
+      position: relative;
+      z-index: 1;
+      border: none;
+      > a {
+//        @include filter-gradient(#ff9d00, #ff8801, vertical);
+      }
+    }
+    .privilege {
+//      @include filter-gradient(#ff9d00, #ff8801, vertical);
+    }
+
+  }
+
+  .buy-box {
+    @include filter-gradient(#ff9d00, #ff8801, vertical);
+  }
+}
+
+.box-link-buy {
+  .link-buy {
+    > a {
+      @include filter-gradient(#ff9d00, #ff8801, vertical);
+    }
+  }
+}
+
+.group .group-slider {
+  .buy {
+    @include border-radius(10px !important);
+    a {
+      background-color: #ff9d00;
+      background-image: none;
+      @include border-radius(10px !important);
+      overflow: hidden;
+      &:hover {
+        background-color: #ff8601;
+        background-image: none;
+        @include border-radius(10px !important);
+
+      }
+    }
+  }
+}
+
+.buy_link_slider, .buy_link_slider__big {
+  &__big {
+    ul li {
+      .buy-link .buy-box {
+        &__featured {
+          @include filter-gradient(#ff4244, #ff3030, vertical);
+        }
+      }
+    }
+  }
+}
+
+.polls {
+  label {
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      &:checked {
+        + i {
+          &:before {
+            @include filter-gradient(#ff9d00, #ff8801, vertical);
+          }
+        }
+      }
+    }
+  }
+}
+
+.landing_page .brands-slider .next:hover, .landing_page .brands-slider .prev:hover {
+  @include opacity(.5);
+}
+
+#header {
+  &.scrollable {
+    @include filter-gradient(#fefcf3, #fffefa, vertical);
+
+  }
+}
+
+.landing_page .last_block, .landing_page .buy_block, .landing_page .first_block, #lightbox-overlay {
+  @include filter-gradient(#fdf8e4, #ffffff, vertical);
+}
+
+.buy-box__fautered {
+  @include border-radius(8px !important);
+}
+
+.landing_page .last_block > *, .landing_page .buy_block > *, .landing_page .first_block > *{
+  z-index: 1;
+  position: relative;
+}

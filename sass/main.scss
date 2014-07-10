@@ -1,0 +1,52 @@
+// @import "../components/foundation/scss/normalize.scss";
+
+// @import "../components/foundation/scss/foundation/variables";
+// @import "../components/foundation/scss/foundation/components/global";
+// @import "../components/foundation/scss/foundation/components/grid";
+// @import "../components/foundation/scss/foundation/components/visibility";
+
+@import "compass";
+//@import "icons/*.png";
+//@import "names/*.png";
+@import "new/*.png";
+
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// @include all-my-icons-sprites;
+// .icon_search {
+//     @include icons-sprite(icon-loupe);
+//     height: icons-sprite-height(icon-loupe);
+//     width: icons-sprite-width(icon-loupe);
+//     display: inline-block;
+//     float: left;
+// }
+
+@import 'compass';
+@import "base/base";
+@import "base/palette";
+@import "base/old";
+@import "base/fonts";
+@import "base/mymixins";
+@import "base/icons";
+@import "base/tabs";
+@import "base/inputs";
+
+// blocks
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/resultTable";
+@import "blocks/landing";
+
+
+
+// sliders
+@import "sliders/brand-slider";
+@import "responsive";
+@import "base/responsive";

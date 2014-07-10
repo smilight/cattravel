@@ -1,0 +1,54 @@
+.brands-slider {
+  // display: none;
+  position: relative;
+  width: 685px;
+  background-color: #443f26;
+  @include border-radius(0 0 15px 0);
+  height: 69px;
+  @include box-sizing(border-box);
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  .prev,.next{
+    position: absolute;
+    top: 27px;
+    text-indent: -9999px;
+    overflow: hidden;
+    opacity: .8;
+    &:hover{opacity: 1;}
+  }
+  .prev {
+    left: 18px;
+    @include new-sprite(slider_icon_prev1);
+    width: new-sprite-width(slider_icon_prev1);
+    height: new-sprite-height(slider_icon_prev1);
+  }
+  .next {
+    @include new-sprite(slider_icon_next1);
+    width: new-sprite-width(slider_icon_next1);
+    height: new-sprite-height(slider_icon_next1);
+    left: 42px;
+  }
+  .mask {
+    max-width: 602px;
+    min-width: 234px;
+    height: 69px;
+    overflow: hidden;
+    margin: 0 25px 0 61px;
+  }
+  ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    // display: inline-block;
+    float: left;
+    width: 100px;
+    height: 69px;
+    line-height: 69px;
+    overflow: hidden;
+  }
+}
