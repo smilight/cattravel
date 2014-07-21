@@ -5,6 +5,16 @@ body,html {
   @include filter-gradient(#faf0c8, #ffffff, vertical);
 
 }
+::-ms-clear { display: none;
+  width: 0;
+  height: 0;}
+::-ms-reveal {  display: none;
+  width: 0;
+  height: 0;}
+input[type=text]::-ms-clear { display: none;
+  width: 0;
+  height: 0; }
+
 
 .b-input_submit{
   background-color: #fb8923;
@@ -30,9 +40,9 @@ body,html {
 .service-options {
   input {
     &[type="button"] {
-      @include filter-gradient(#ffa700, #ff8601, vertical);
+//      @include filter-gradient(#ffa700, #ff8601, vertical);
       &:hover {
-        @include filter-gradient(#ff8601, #ffa700, vertical);
+//        @include filter-gradient(#ff8601, #ffa700, vertical);
       }
     }
   }

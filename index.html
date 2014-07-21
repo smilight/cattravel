@@ -13,6 +13,9 @@
     <!--<link rel="stylesheet" type="text/css" href="styles/components/bootstrap.min.css"/>-->
     <link rel="stylesheet" type="text/css" href="styles/components/jquery-ui-1.9.2.custom.css"/>
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -114,8 +117,8 @@
                     <span class="b-input__clear remove_input"></span>
                                     <span class="b-input__help city_or_air">Город или аэропорт:&nbsp;<a href="#">Новосибирск</a>,&nbsp;<a
                                             href="#">Иркутск</a></span>
-                    <i class="input_icon__arrow"></i>
-                    <input class="b-input__input" type="text" placeholder="откуда">
+                    <!--<i class="input_icon__arrow"></i>-->
+                    <input class="b-input__input" type="text" placeholder="откуда" autocomplete="on">
 
                     <!--                    <div class="b-input__list route-list dropdown">-->
                     <!--                        <div class="b-route-list route-list-content">-->
@@ -151,7 +154,7 @@
                     <span class="b-input__clear remove_input"></span>
                                     <span class="b-input__help city_or_air">Город или аэропорт:&nbsp;<a href="#">Новосибирск</a>,&nbsp;<a
                                             href="#">Иркутск</a></span>
-                    <i class="input_icon__arrow"></i>
+                    <!--<i class="input_icon__arrow"></i>-->
                     <input class="b-input__input" type="text" placeholder="куда">
 
                     <!--                    <div class="b-input__list route-list dropdown">-->
@@ -232,7 +235,7 @@
         </div>
 
     </div>
-    <div class="brands-slider slider" style="display: none">
+    <div class="brands-slider slider" style="display: block">
         <div class="mask jcarousel">
             <ul>
                 <li>
@@ -320,6 +323,7 @@
     Flycats.iefixes.init();
 })</script>
 <![endif]-->
+
 
 </body>
 </html>

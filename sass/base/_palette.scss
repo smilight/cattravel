@@ -93,28 +93,15 @@
   position: relative;
   background-color: #443f26;
   width: 260px;
-  height: 60px;
+  height: 85px;
   margin-left: 15px;
   @include border-radius(10px);
   overflow: visible;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.14);
   display: inline-block;
   padding: 0 35px;
-  margin-top: 22px;
+  margin-top: 10px;
   border: none;
-  &__big {
-    max-width: 725px;
-    width: 100%;
-    display: block;
-    margin: 25px auto;
-    float: none;
-    height: 60px;
-    ul li {
-      width: 212px;
-      .buy-link .buy-box {
-      }
-    }
-  }
   .jcarousel {
     display: inline-block;
     width: 100%;
@@ -123,7 +110,8 @@
   }
   .prev, .next {
     position: absolute;
-    top: 22px;
+    top: 50%;
+    margin-top: -7px;
     height: new-sprite-height(prev_blue);
     width: new-sprite-width(prev_blue);
     text-indent: -9999px;
@@ -144,5 +132,23 @@
     display: inline-block;
     position: relative;
     @include border-radius(8px);
+    margin-top: 12px;
   }
+  &__big {
+    max-width: 725px;
+    width: 100%;
+    display: block;
+    margin: 25px auto;
+    float: none;
+    height: 60px;
+    li{
+      margin-top: 0;
+    }
+    ul li {
+      width: 212px;
+      .buy-link .buy-box {
+      }
+    }
+  }
+
 }

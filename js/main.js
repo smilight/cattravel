@@ -15,10 +15,10 @@ Flycats.common.page = {
         this.dropDowns('.dropdowns,.b-dropdown__header');
         this.autocomplete('.b-input_long .b-input__input');
 //        this.scrollable('#header');
-
+        this.trimText(9,'.info-flight span,.info-flight strong,.company-info dd,.ch__item,.item strong.city');
     },
 
-    autocomplete:function(selector){
+    autocomplete: function (selector) {
 
 
         $(function () {
@@ -41,7 +41,7 @@ Flycats.common.page = {
                 }
             ];
 
-            $(selector).each(function(){
+            $(selector).each(function () {
                 var self = $(this),
                     codeSpan = self.parent().find('.b-input__code'),
                     clear = self.parent().find('.b-input__clear'),
@@ -50,9 +50,9 @@ Flycats.common.page = {
                 clear.hide();
 
                 self
-                    .bind( "keydown", function( event ) {
-                        if ( event.keyCode === $.ui.keyCode.TAB &&
-                            $( this ).autocomplete( "instance" ).menu.active ) {
+                    .bind("keydown", function (event) {
+                        if (event.keyCode === $.ui.keyCode.TAB &&
+                            $(this).autocomplete("instance").menu.active) {
                             event.preventDefault();
                         }
                     })
@@ -68,17 +68,17 @@ Flycats.common.page = {
                             self.val(ui.item.label);
                             return false;
                         },
-                        select: function( event, ui ) {
-                            codeSpan.text( ui.item.code );
-                            self.val( ui.item.label );
+                        select: function (event, ui) {
+                            codeSpan.text(ui.item.code);
+                            self.val(ui.item.label);
                             clear.show();
                             return false;
                         },
-                        open: function() {
-                            $( this ).addClass( "hide-border" );
+                        open: function () {
+                            $(this).addClass("hide-border");
                         },
-                        close: function() {
-                            $( this ).removeClass( "hide-border" );
+                        close: function () {
+                            $(this).removeClass("hide-border");
                         }
                     })
                     .data("ui-autocomplete")._renderItem = function (ul, item) {
@@ -90,16 +90,20 @@ Flycats.common.page = {
                         '<span>$1</span>');
 
                     var wrapper = $('<div/>')
-                            .append('<span class=\"code\">'+item.code+'</span>')
+                            .append('<span class=\"code\">' + item.code + '</span>')
                             .append('<span class=\"route-location\"/>'),
-                        label = wrapper.find('span.route-location').append('<span>'+output+', <span/>').append(item.city);
-                    return $("<li>").addClass('b-route-list__item').append( $( "<a>" ).html(wrapper ) )
+                        label = wrapper.find('span.route-location').append('<span>' + output + ', <span/>').append(item.city);
+                    return $("<li>").addClass('b-route-list__item').append($("<a>").html(wrapper))
                         .appendTo(ul);
                 };
 
-                clear.on('click',function(){self.val('');codeSpan.text('');clear.hide()});
-                arrow.on('click', function(event) {
-                    self.focus().autocomplete( "search", "");
+                clear.on('click', function () {
+                    self.val('');
+                    codeSpan.text('');
+                    clear.hide()
+                });
+                arrow.on('click', function (event) {
+                    self.focus().autocomplete("search", "");
                 });
             });
 
@@ -108,17 +112,18 @@ Flycats.common.page = {
         });
     },
 
-    activateRouteList: function(selector){},
+    activateRouteList: function (selector) {
+    },
 
 
     dropDowns: function (selector) {
 
-        $(selector).on('click',function(){
+        $(selector).on('click', function () {
             console.log('asdsad')
-            if(!$(this).parent().hasClass('opened')){
+            if (!$(this).parent().hasClass('opened')) {
                 $(selector).parent().removeClass('opened');
                 $(this).parent().addClass('opened');
-            }else{
+            } else {
                 $(selector).parent().removeClass('opened');
             }
         });
@@ -225,54 +230,53 @@ Flycats.common.page = {
         });
         $('.show-more-hover').on('click', function (e) {
             e.preventDefault();
-            $('.show-all-modal').fadeToggle().css({
-                'top': e.pageY+20
-            });
+//            $('.show-all-modal__wr').fadeToggle();
+            $('.show-all-modal__wr').addClass('show-all-modal__v');
+            $('body').css('overflow', 'hidden');
         });
 
-$('.slider a.hover-info').on('click', function (e) {
-    e.preventDefault();
-    $('.proposals').css({
-        'top': e.pageY+30,
-        'position': 'absolute',
-        'left': e.pageX+20
-    }).children().show();
+        $('.slider a.hover-info').on('click', function (e) {
+            e.preventDefault();
+            $('.proposals').css({
+                'top': e.pageY + 30,
+                'position': 'absolute',
+                'left': e.pageX + 20
+            }).children().show();
 
-});
+        });
 
 
         $('.social-panel.drop .close,.show-all-modal .close').on('click', function (e) {
             e.preventDefault();
             $(this).parent().fadeToggle();
+            $('.show-all-modal__wr').removeClass('show-all-modal__v');
+            $('body').css('overflow', 'visible');
         });
         $(document).mouseup(function (e) {
             var container = $(".dropdown");
 
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 container.hide(0);
+                $('.show-all-modal__wr').removeClass('show-all-modal__v');
+                $('body').css('overflow', 'visible');
             }
         });
     },
-
+    trimText: function (maxSimbols,selector) {
+        $(selector).each(function () {
+            if ($(this).text().length > maxSimbols) {
+                $(this).attr('title', $(this).text());
+                $(this).text($(this).text().substr(0, maxSimbols));
+                $(this).append('...');
+            }
+        });
+    },
     kostili: function () {
-        $('.b-dropdown_small').find('.b-dropdown__link').on('click',function(e){
+        $('.b-dropdown_small').find('.b-dropdown__link').on('click', function (e) {
             e.preventDefault();
             $('.b-dropdown').removeClass('opened');
             $(this).parents('.b-dropdown_small').last().find('.b-dropdown__header').html($(this).html());
         });
-
-//        $('.b-input_select').on('click',function(){
-//            if(!$(this).hasClass('opened')){
-//                $('.b-input_select').removeClass('opened');
-//                $(this).addClass('opened');
-//            }else{
-//                $('.b-input_select').removeClass('opened');
-//            }
-//        });
-
-        $('.info-flight span,.info-flight strong').each(function(){
-            $(this).attr('title',$(this).text());
-        })
 
         $('.b-input_select.currency').selecter({
             customClass: 'b-dropdown b-dropdown_small'
@@ -281,17 +285,17 @@ $('.slider a.hover-info').on('click', function (e) {
             customClass: 'b-input b-input_middle b-dropdown class'
         }).parent().append("<i class=\"input_icon__class\"/><span class=\"b-input__help\">Класс</span>");
 
-        $('.b-input__checkbox').each(function(){
+        $('.b-input__checkbox').each(function () {
             $(this).icheck({
                 checkboxClass: 'b-input__checkbox'
             });
         });
 
-        $('.direct-flights [type=\'checkbox\']').icheck({
+        $('.direct-flights [type=\'checkbox\'],.checkbox_item input[type=\"checkbox\"]').icheck({
             checkboxClass: 'b-input__checkbox_sm'
         });
 
-        $('.b-input__checkbox_big').each(function(){
+        $('.b-input__checkbox_big').each(function () {
             $(this).icheck({
                 checkboxClass: 'b-input__checkbox_big'
             });
@@ -303,8 +307,7 @@ $('.slider a.hover-info').on('click', function (e) {
         });
 
         // city trim
-        this._trimtext('.item strong.city', 9);
-        // TODO: check slider
+
         if ($('.brands-slider').is(':hidden')) {
             $('div#tab-block').addClass('right_bottom_border');
         }
@@ -323,11 +326,11 @@ $('.slider a.hover-info').on('click', function (e) {
                 btnIncr = holder.find('.b-input__incr'),
                 btnDecr = holder.find('.b-input__decr'),
                 qtyField = holder.find('.b-input__input');
-            holder.find('.b-input__decr,.b-input__incr').on('mousedown',function(e){
-                qtyField.css('boxShadow','0 0 0px 4px #3fa492');
+            holder.find('.b-input__decr,.b-input__incr').on('mousedown', function (e) {
+                qtyField.css('boxShadow', '0 0 0px 4px #3fa492');
             });
-            holder.find('.b-input__decr,.b-input__incr').on('mouseup',function(e){
-                qtyField.css('boxShadow','0 0 0px 4px transparent');
+            holder.find('.b-input__decr,.b-input__incr').on('mouseup', function (e) {
+                qtyField.css('boxShadow', '0 0 0px 4px transparent');
             });
             btnIncr.bind('click', function (e) {
                 e.preventDefault();
@@ -431,14 +434,14 @@ Flycats.iefixes = {
 };
 
 jQuery(function () {
-    initHeaderSelects();
-    initCustomSelects();
+//    initHeaderSelects();
+//    initCustomSelects();
 //    initCounter();
-    initLightbox();
+//    initLightbox();
 //    initSearch();
 //    initTravelServices();
     initCustomSelect();
-    initNiseCheck();
+//    initNiseCheck();
 //    initScrollable();
 
     $('.route-input > input[type="text"]').keydown(function () {

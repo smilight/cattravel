@@ -70,7 +70,7 @@ a:hover {
   text-decoration: none;
   opacity: .8;
 }
-a:active{
+a:active:not(.b-nav__link,.filter-link a){
   zoom: .95;
 }
 

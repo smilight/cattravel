@@ -1,5 +1,11 @@
 body, html { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFAF0C8', endColorstr='#FFFFFFFF'); }
 
+::-ms-clear { display: none; width: 0; height: 0; }
+
+::-ms-reveal { display: none; width: 0; height: 0; }
+
+input[type=text]::-ms-clear { display: none; width: 0; height: 0; }
+
 .b-input_submit { background-color: #fb8923; }
 
 .b-input_submit__input { background-color: transparent; }
@@ -8,9 +14,6 @@ body, html { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradie
 .b-footer .b-footer__input { line-height: 15px; }
 
 .best-offer .link-buy { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9D00', endColorstr='#FFFF8601'); }
-
-.service-options input[type="button"] { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFA700', endColorstr='#FFFF8601'); }
-.service-options input[type="button"]:hover { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8601', endColorstr='#FFFFA700'); }
 
 .result-table .switch-dates > .active { position: relative; z-index: 1; border: none; }
 .result-table .buy-box { *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9D00', endColorstr='#FFFF8801'); }
