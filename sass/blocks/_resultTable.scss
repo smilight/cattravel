@@ -221,6 +221,8 @@
   height: 100%;
   border-right: 1px dashed rgba(255, 136, 1, 0.61);
   border-left: 1px dashed #eee;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   dl {
     overflow: hidden;
     font-size: 1.2em;
@@ -236,6 +238,10 @@
     margin: 0;
     line-height: 18px;
     color: #999;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+max-width: 120px;
   }
 }
 .route-information {
@@ -281,12 +287,21 @@
     color: #333;
     font-size: 1.8em;
     line-height: 1;
+    max-width: 124px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .aeroport {
     display: block;
     font-size: 1.1em;
     color: #999;
     margin-bottom: 2px;
+    max-width: 124px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
   }
   span {
     border: none !important;

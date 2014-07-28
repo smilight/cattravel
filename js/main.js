@@ -15,7 +15,7 @@ Flycats.common.page = {
         this.dropDowns('.dropdowns,.b-dropdown__header');
         this.autocomplete('.b-input_long .b-input__input');
 //        this.scrollable('#header');
-        this.trimText(9,'.info-flight span,.info-flight strong,.company-info dd,.ch__item,.item strong.city');
+//        this.trimText(9,'.info-flight span,.info-flight strong,.company-info dd,.ch__item,.item strong.city');
     },
 
     autocomplete: function (selector) {
@@ -91,8 +91,8 @@ Flycats.common.page = {
 
                     var wrapper = $('<div/>')
                             .append('<span class=\"code\">' + item.code + '</span>')
-                            .append('<span class=\"route-location\"/>'),
-                        label = wrapper.find('span.route-location').append('<span>' + output + ', <span/>').append(item.city);
+                            .append('<span class=\"route-location\"/>');
+//                        label = wrapper.find('span.route-location').append('<span>' + output + ', <span/>').append(item.city);
                     return $("<li>").addClass('b-route-list__item').append($("<a>").html(wrapper))
                         .appendTo(ul);
                 };
@@ -102,7 +102,7 @@ Flycats.common.page = {
                     codeSpan.text('');
                     clear.hide()
                 });
-                arrow.on('click', function (event) {
+                arrow.on('click', function () {
                     self.focus().autocomplete("search", "");
                 });
             });
@@ -112,14 +112,9 @@ Flycats.common.page = {
         });
     },
 
-    activateRouteList: function (selector) {
-    },
-
-
     dropDowns: function (selector) {
 
         $(selector).on('click', function () {
-            console.log('asdsad')
             if (!$(this).parent().hasClass('opened')) {
                 $(selector).parent().removeClass('opened');
                 $(this).parent().addClass('opened');
@@ -246,11 +241,9 @@ Flycats.common.page = {
         });
 
 
-        $('.social-panel.drop .close,.show-all-modal .close').on('click', function (e) {
+        $('.social-panel .close').on('click', function (e) {
             e.preventDefault();
-            $(this).parent().fadeToggle();
-            $('.show-all-modal__wr').removeClass('show-all-modal__v');
-            $('body').css('overflow', 'visible');
+            $('.social-panel').fadeToggle();
         });
         $(document).mouseup(function (e) {
             var container = $(".dropdown");
@@ -611,198 +604,197 @@ function initCustomSelects() {
 }
 
 //  lightbox function
-function initLightbox() {
-    var _zIndex = 1000;
-    var _fadeSpeed = 350;
-    var _faderOpacity = 1;
-    var _faderBackground = '#fff url(../images/bg-body.png) repeat-x';
-    var _faderId = 'lightbox-overlay';
-    var _closeLink = 'a.close';
-    var _fader;
-    var _lightbox = null;
-    var _ajaxClass = 'ajax-load';
-    var _openers = jQuery('a.lightbox-opener');
-    var _page = jQuery(document);
-    var _scroll = false;
-
-    // init popup fader
-    _fader = jQuery('#' + _faderId);
-    if (!_fader.length) {
-        _fader = jQuery('<div />');
-        _fader.attr('id', _faderId);
-        jQuery('body').append(_fader);
-    }
-    _fader.css({
-        opacity: _faderOpacity,
-        backgroundColor: _faderBackground,
-        position: 'absolute',
-        overflow: 'hidden',
-        display: 'none',
-        top: 0,
-        left: 0,
-        zIndex: _zIndex
-    });
-
-    // lightbox positioning function
-    function positionLightbox() {
-        if (_lightbox) {
-            var _minWidth = jQuery('body > div:eq(0)').outerWidth();
-            var _windowHeight = jQuery(window).height();
-            var _windowWidth = jQuery(window).width();
-            var _lightboxWidth = _lightbox.outerWidth();
-            var _lightboxHeight = _lightbox.outerHeight();
-            var _pageHeight = _page.height();
-
-            if (_windowWidth < _minWidth) _fader.css('width', _minWidth);
-            else _fader.css('width', '100%');
-            if (_windowHeight < _pageHeight) _fader.css('height', _pageHeight);
-            else _fader.css('height', _windowHeight);
-
-            _lightbox.css({
-                position: 'absolute',
-                zIndex: (_zIndex + 1)
-            });
-
-            // vertical position
-            if (_windowHeight > _lightboxHeight) {
-                _lightbox.css({
-                    position: 'fixed',
-                    top: (_windowHeight - _lightboxHeight) / 2
-                });
-            } else {
-                var _faderHeight = _fader.height();
-                if (_faderHeight < _lightboxHeight) _fader.css('height', _lightboxHeight);
-                if (!_scroll) {
-                    if (_faderHeight - _lightboxHeight > parseInt(jQuery(window).scrollTop())) {
-                        _faderHeight = parseInt(jQuery(window).scrollTop())
-                        _scroll = _faderHeight;
-                    } else {
-                        _scroll = _faderHeight - _lightboxHeight;
-                    }
-                }
-                _lightbox.css({
-                    position: 'absolute',
-                    top: _scroll < 0 ? 0 : _scroll
-                });
-            }
-
-            // horizontal position
-            if (_fader.width() > _lightbox.outerWidth()) _lightbox.css({
-                left: (_fader.width() - _lightbox.outerWidth()) / 2
-            });
-            else _lightbox.css({
-                left: 0
-            });
-        }
-    }
-
-    // show/hide lightbox
-    function toggleState(_state) {
-        if (!_lightbox) return;
-        if (_state) {
-            _fader.fadeIn(_fadeSpeed, function () {
-                _lightbox.fadeIn(_fadeSpeed);
-            });
-            _scroll = false;
-            positionLightbox();
-        } else {
-            _lightbox.fadeOut(_fadeSpeed, function () {
-                _fader.fadeOut(_fadeSpeed);
-                _scroll = false;
-            });
-        }
-    }
-
-    // popup actions
-    function initPopupActions(_obj) {
-        if (!_obj.get(0).jsInit) {
-            _obj.get(0).jsInit = true;
-            // close link
-            _obj.find(_closeLink).click(function () {
-                _lightbox = _obj;
-                toggleState(false);
-                return false;
-            });
-        }
-    }
-
-    // lightbox openers
-    _openers.each(function () {
-        var _opener = jQuery(this);
-        var _target = _opener.attr('href');
-
-        // popup load type - ajax or static
-        if (_opener.hasClass(_ajaxClass)) {
-            _opener.click(function () {
-                // ajax load
-                if (jQuery('div[rel*="' + _target + '"]').length == 0) {
-                    jQuery.ajax({
-                        url: _target,
-                        type: "POST",
-                        dataType: "html",
-                        success: function (msg) {
-                            // append loaded popup
-                            _lightbox = jQuery(msg);
-                            _lightbox.find('img').load(positionLightbox)
-                            _lightbox.attr('rel', _target).hide().css({
-                                position: 'absolute',
-                                zIndex: (_zIndex + 1),
-                                top: -9999,
-                                left: -9999
-                            });
-                            jQuery('body').append(_lightbox);
-
-                            // init js for lightbox
-                            initPopupActions(_lightbox);
-
-                            // show lightbox
-                            toggleState(true);
-                        },
-                        error: function (msg) {
-                            alert('AJAX error!');
-                            return false;
-                        }
-                    });
-                } else {
-                    _lightbox = jQuery('div[rel*="' + _target + '"]');
-                    toggleState(true);
-                }
-                return false;
-            });
-        } else {
-            if (jQuery(_target).length) {
-                // init actions for popup
-                var _popup = jQuery(_target);
-                initPopupActions(_popup);
-                // open popup
-                _opener.click(function () {
-                    if (_lightbox) {
-                        _lightbox.fadeOut(_fadeSpeed, function () {
-                            _lightbox = _popup.hide();
-                            toggleState(true);
-                        })
-                    } else {
-                        _lightbox = _popup.hide();
-                        toggleState(true);
-                    }
-
-                    return false;
-                });
-            }
-        }
-    });
-
-    // event handlers
-    jQuery(window).resize(positionLightbox);
-    jQuery(window).scroll(positionLightbox);
-    jQuery(document).keydown(function (e) {
-        if (!e) evt = window.event;
-        if (e.keyCode == 27) {
-            toggleState(false);
-        }
-    })
-    _fader.click(function () {
-        if (!_fader.is(':animated')) toggleState(false);
-        return false;
-    })
-}
+//function initLightbox() {
+//    var _zIndex = 1000;
+//    var _fadeSpeed = 350;
+//    var _faderOpacity = 1;
+//    var _faderBackground = '#fff url(../images/bg-body.png) repeat-x';
+//    var _faderId = 'lightbox-overlay';
+//    var _closeLink = 'a.close';
+//    var _fader;
+//    var _lightbox = null;
+//    var _ajaxClass = 'ajax-load';
+//    var _openers = jQuery('a.lightbox-opener');
+//    var _page = jQuery(document);
+//    var _scroll = false;
+//
+//    // init popup fader
+//    _fader = jQuery('#' + _faderId);
+//    if (!_fader.length) {
+//        _fader = jQuery('<div />');
+//        _fader.attr('id', _faderId);
+//        jQuery('body').append(_fader);
+//    }
+//    _fader.css({
+//        opacity: _faderOpacity,
+//        backgroundColor: _faderBackground,
+//        position: 'absolute',
+//        overflow: 'hidden',
+//        display: 'none',
+//        top: 0,
+//        left: 0,
+//        zIndex: _zIndex
+//    });
+//
+//    // lightbox positioning function
+//    function positionLightbox() {
+//        if (_lightbox) {
+//            var _minWidth = jQuery('body > div:eq(0)').outerWidth();
+//            var _windowHeight = jQuery(window).height();
+//            var _windowWidth = jQuery(window).width();
+////            var _lightboxWidth = _lightbox.outerWidth();
+//            var _lightboxHeight = _lightbox.outerHeight();
+//            var _pageHeight = _page.height();
+//
+//            if (_windowWidth < _minWidth) _fader.css('width', _minWidth);
+//            else _fader.css('width', '100%');
+//            if (_windowHeight < _pageHeight) _fader.css('height', _pageHeight);
+//            else _fader.css('height', _windowHeight);
+//
+//            _lightbox.css({
+//                position: 'absolute',
+//                zIndex: (_zIndex + 1)
+//            });
+//
+//            // vertical position
+//            if (_windowHeight > _lightboxHeight) {
+//                _lightbox.css({
+//                    position: 'fixed',
+//                    top: (_windowHeight - _lightboxHeight) / 2
+//                });
+//            } else {
+//                var _faderHeight = _fader.height();
+//                if (_faderHeight < _lightboxHeight) _fader.css('height', _lightboxHeight);
+//                if (!_scroll) {
+//                    if (_faderHeight - _lightboxHeight > parseInt(jQuery(window).scrollTop())) {
+//                        _faderHeight = parseInt(jQuery(window).scrollTop())
+//                        _scroll = _faderHeight;
+//                    } else {
+//                        _scroll = _faderHeight - _lightboxHeight;
+//                    }
+//                }
+//                _lightbox.css({
+//                    position: 'absolute',
+//                    top: _scroll < 0 ? 0 : _scroll
+//                });
+//            }
+//
+//            // horizontal position
+//            if (_fader.width() > _lightbox.outerWidth()) _lightbox.css({
+//                left: (_fader.width() - _lightbox.outerWidth()) / 2
+//            });
+//            else _lightbox.css({
+//                left: 0
+//            });
+//        }
+//    }
+//
+//    // show/hide lightbox
+//    function toggleState(_state) {
+//        if (!_lightbox) return;
+//        if (_state) {
+//            _fader.fadeIn(_fadeSpeed, function () {
+//                _lightbox.fadeIn(_fadeSpeed);
+//            });
+//            _scroll = false;
+//            positionLightbox();
+//        } else {
+//            _lightbox.fadeOut(_fadeSpeed, function () {
+//                _fader.fadeOut(_fadeSpeed);
+//                _scroll = false;
+//            });
+//        }
+//    }
+//
+//    // popup actions
+//    function initPopupActions(_obj) {
+//        if (!_obj.get(0).jsInit) {
+//            _obj.get(0).jsInit = true;
+//            // close link
+//            _obj.find(_closeLink).click(function () {
+//                _lightbox = _obj;
+//                toggleState(false);
+//                return false;
+//            });
+//        }
+//    }
+//
+//    // lightbox openers
+//    _openers.each(function () {
+//        var _opener = jQuery(this);
+//        var _target = _opener.attr('href');
+//
+//        // popup load type - ajax or static
+//        if (_opener.hasClass(_ajaxClass)) {
+//            _opener.click(function () {
+//                // ajax load
+//                if (jQuery('div[rel*="' + _target + '"]').length == 0) {
+//                    jQuery.ajax({
+//                        url: _target,
+//                        type: "POST",
+//                        dataType: "html",
+//                        success: function (msg) {
+//                            // append loaded popup
+//                            _lightbox = jQuery(msg);
+//                            _lightbox.find('img').load(positionLightbox);
+//                            _lightbox.attr('rel', _target).hide().css({
+//                                position: 'absolute',
+//                                zIndex: (_zIndex + 1),
+//                                top: -9999,
+//                                left: -9999
+//                            });
+//                            jQuery('body').append(_lightbox);
+//
+//                            // init js for lightbox
+//                            initPopupActions(_lightbox);
+//
+//                            // show lightbox
+//                            toggleState(true);
+//                        },
+//                        error: function () {
+//                            alert('AJAX error!');
+//                            return false;
+//                        }
+//                    });
+//                } else {
+//                    _lightbox = jQuery('div[rel*="' + _target + '"]');
+//                    toggleState(true);
+//                }
+//                return false;
+//            });
+//        } else {
+//            if (jQuery(_target).length) {
+//                // init actions for popup
+//                var _popup = jQuery(_target);
+//                initPopupActions(_popup);
+//                // open popup
+//                _opener.click(function () {
+//                    if (_lightbox) {
+//                        _lightbox.fadeOut(_fadeSpeed, function () {
+//                            _lightbox = _popup.hide();
+//                            toggleState(true);
+//                        })
+//                    } else {
+//                        _lightbox = _popup.hide();
+//                        toggleState(true);
+//                    }
+//
+//                    return false;
+//                });
+//            }
+//        }
+//    });
+//
+//    // event handlers
+//    jQuery(window).resize(positionLightbox);
+//    jQuery(window).scroll(positionLightbox);
+//    jQuery(document).keydown(function (e) {
+//        if (e.keyCode == 27) {
+//            toggleState(false);
+//        }
+//    });
+//    _fader.click(function () {
+//        if (!_fader.is(':animated')) toggleState(false);
+//        return false;
+//    })
+//}

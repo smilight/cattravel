@@ -534,7 +534,7 @@
   .route-information {
   }
   .takeoff {
-    padding-right: 22px;
+    padding-right: 15px;
   }
 }
 
@@ -1028,6 +1028,10 @@
           @include background(linear-gradient(top, #ff8601 0%, #ff9d00 100%));
 
         }
+        &:active{
+          font-size: 13px;
+          color: #fff;
+        }
         &:after {
           content: '';
           position: absolute;
@@ -1144,7 +1148,12 @@
         opacity: 1;
         @include background(linear-gradient(top, #ff8601 0%, #ff9d00 100%));
       }
-//      &:after {
+      &:active{
+        font-size: 13px;
+        color: #fff;
+      }
+
+      //      &:after {
 //        content: '';
 //        position: absolute;
 //        top: -4px;
@@ -1569,7 +1578,7 @@
 //    }
 //  }
   .takeoff {
-    padding-right: 22px;
+    padding-right: 15px;
     span {
       border: none !important;
     }
@@ -1623,6 +1632,17 @@
   .items {
     .item:not(:first-child) {
       border-top: 1px dashed #eee;
+    }
+  }
+}
+
+.orange-item-border{
+  .items {
+    .item {
+      overflow: hidden;
+      height: 100%;
+      display: block;
+      border-top: 1px dashed #ff8801;
     }
   }
 }
