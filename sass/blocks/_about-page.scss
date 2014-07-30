@@ -1,0 +1,99 @@
+#content.p-about{
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-main{
+  font-weight: bold;
+  color: #ff8801;
+  font-size: 39px;
+  width: 100%;
+  text-align: center;
+  font-family: "pf_square_sans_probold";
+  margin: {
+    top:25px;
+    bottom: 25px;
+  };
+}
+
+.simple-text{
+  color: #272727;
+  font-family: "pf_square_sans_proregular";
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.about-blocks{
+  margin-top: 50px;
+  width: 100%;
+  display: inline-block;
+}
+.about-block{
+  font-family: "pf_square_sans_proregular";
+  max-width: 265px;
+  float: left;
+  margin-bottom: 65px;
+  &:not(:nth-child(3n+3)){
+    margin-right: 75px;
+  }
+  &_header{
+    color: #fb8923;
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    font-family: "pf_square_sans_probold";
+
+    //    line-height: 75px;
+    display: inline-block;
+    span{
+      margin-right: 20px;
+    }
+    b{
+      padding-top: 17px;
+      display: block;
+    }
+  }
+  &_more{
+    color: #12c0d4;
+    font-size: 16px;
+    border-bottom: 1px dotted;
+  }
+  &_text{
+    color: #272727;
+    font-size: 16px;
+    width: 100%;
+
+  }
+}
+
+
+.icon_header{
+  &__fly{
+    @include iconsfull(icon_header__fly);
+    @extend %icon-left;
+  }
+  &__team{
+    @include iconsfull(icon_header__team);
+    @extend %icon-left;
+  }
+  &__feedback{
+    @include iconsfull(icon_header__feedback);
+    @extend %icon-left;
+  }
+  &__hands{
+    @include iconsfull(icon_header__hands);
+    @extend %icon-left;
+  }
+  &__agency{
+    @include iconsfull(icon_header__agency);
+    @extend %icon-left;
+  }
+  &__pluses{
+    @include iconsfull(icon_header__pluses);
+    @extend %icon-left;
+  }
+
+}
