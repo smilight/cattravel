@@ -16,6 +16,24 @@
   @include box-sizing(border-box);
   @include border-radius(10px);
   position: relative;
+  &-checkbox{
+    float: left;
+    width: 265px;
+.b-input__checkbox{
+  margin-top: 15px;
+  margin-right: 15px;
+  float: left;
+}
+    label{
+      color: #fdfdfd;
+      font-family: "Arial";
+      font-size: 18px;
+      @include text-shadow(-1px 0 0 rgba(0,0,0,.14));
+      max-width: 80%;
+      float: left;
+      padding-top: 5px;
+    }
+  }
   &_long{
     width: 405px;
     margin-right: 5px;

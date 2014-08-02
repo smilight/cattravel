@@ -306,6 +306,7 @@
   &__tab_car,
   &__tab_fly,
   &__tab_house,
+  &__tab_strah,
   &__tab_case,
   &__tab_train,
   &__tab_car1,
@@ -328,6 +329,7 @@
   &__tab_car1{@include new-sprite(icon__tab_car1);}
   &__tab_palm{@include new-sprite(icon__tab_palm);}
   &__tab_card{@include new-sprite(icon__tab_card);}
+  &__tab_strah{@include new-sprite(icon__tab_strah);}
 
   &__show-more{
     &_blue{

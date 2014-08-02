@@ -13,7 +13,7 @@ Flycats.common.page = {
         this.counters('.counter');
         this.initTravelServices('.additional-services fieldset');
         this.dropDowns('.dropdowns,.b-dropdown__header');
-        this.autocomplete('.b-input_long .b-input__input');
+        this.autocomplete('.b-input_long:not(.no-autocomplete) .b-input__input');
 //        this.scrollable('#header');
 //        this.trimText(9,'.info-flight span,.info-flight strong,.company-info dd,.ch__item,.item strong.city');
     },

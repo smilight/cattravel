@@ -1,0 +1,108 @@
+.left-menu{
+  font-family: "pf_square_sans_proregular";
+  &_wr{
+    float: left;
+    width: 30%;
+    display: block;
+    margin-right: 20px;
+  }
+  &_main-item{
+    font-size: 22px;
+    padding: 15px 0;
+    border-bottom: 1px solid #dec7a8;
+    font-family: "pf_square_sans_probold";
+    margin-bottom: 15px;
+  }
+  &_item{
+    color: #282828;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-indent: 20px;
+    &.active,&:hover{
+      color:#ffffff;
+//      font-family: "pf_square_sans_probold";
+      font-weight: bold;
+      @include box-shadow(0 7px 6px rgba(217,119,8,.2));
+      @include background-image(linear-gradient(bottom, #ff8501 22.2%, #ffa700 172.2%));
+      @include border-radius(10px);
+      position: relative;
+      &:after{
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 3.5px 0 3.5px 4px;
+        border-color: transparent transparent transparent #ff9101;
+        right: -4px;
+        top: 50%;
+        margin-top: -3px;
+        content: '';
+      }
+    }
+  }
+}
+
+.content-right{
+  float: right;
+  width: 65%;
+  display: block;
+  font-family: "pf_square_sans_proregular";
+}
+
+.main-header{
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dec7a8;
+}
+
+.search-block{
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  &_input{
+    width: 100%;
+    display: block;
+    border: 2px solid #ddc7a7;
+    font-size: 14px;
+    padding: 10px;
+    text-indent: 10px;
+    @include border-radius(5px);
+    @include input-placeholder(){
+      color: #5c5c5c;
+    }
+  }
+  &_btn{
+    @include new-sprite(search-icon);
+    width: new-sprite-height(search-icon);
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    height: 100%;
+  }
+}
+
+.questions-list{
+  &_item{
+    margin-bottom: 45px;
+    display: inline-block;
+    width: 100%;
+    &__header{
+      font-size: 18px;
+      color: #fc8923;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    &__text{
+      font-size: 14px;
+      color: #282828;
+    }
+  }
+}

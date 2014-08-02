@@ -36,7 +36,7 @@
     max-width: 690px;
     min-width: 220px;
     padding: 0 25px 10px 50px;
-    min-height: 300px;
+    min-height: 230px;
     @include box-shadow(0px 0px 30px 0px rgba(0, 0, 0, 0.5));
     position: relative;
     z-index: 1;
@@ -50,8 +50,8 @@
 .tab-content{
   overflow: visible;
   width:100%;
-  display: block;
-  min-height: 265px;
+  display: inline-block;
+  min-height: 180px;
   .tab-pane{
 //    display: inline-block;
     position: relative;
