@@ -1,0 +1,168 @@
+.p-contact-us{
+  display: table;
+  height: 300px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact_header{
+  color: #000;
+  font-family: "pf_square_sans_probold";
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.contact_tabs{
+  &__wr,&__list{
+    width: 100%;
+    display: inline-block;
+    background: none;
+    border: none;
+    @include border-radius(0);
+  }
+
+  &__wr{}
+
+  &__tab{}
+
+  &__link{
+    font-family: "pf_square_sans_probold";
+    font-size: 18px;
+    font-weight: bold;
+    color: #fb8923 !important;
+    text-transform: capitalize;
+    display: block;
+    [class^='icon_contact-us']{
+      margin: 0 auto;
+      display: table;
+      margin-bottom: 15px;
+    }
+    &_wr{
+      float: left;
+      width: 25%;
+      text-align: center;
+      &:focus{
+        outline: none;
+      }
+      &.ui-tabs-active{
+
+        .contact_tabs__link{
+          color: #000 !important;
+          [class^='icon_contact-us']{
+            background-color: #000000;
+          }
+        }
+      }
+    }
+  }
+
+  &__list{
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+
+.contact-form{
+  position: relative;
+  background: #ffffff;
+  display: inline-block;
+  &:after, &:before {
+    border-style: solid;
+    border-width: 0 6.5px 7px 6.5px;
+    border-color: transparent transparent #FFFFFF transparent;
+    top: -6px;
+    content: '';
+    left: 25px;
+    position: absolute;
+    margin-left: 2px;
+  }
+  &:before {
+    border-style: solid;
+    border-width: 0 8.5px 9px 8.5px;
+    border-color: transparent transparent #ddc8a7 transparent;
+    border-top-color: inherit;
+    top: -8px;
+    margin-left: 0;
+  }
+  &_text,&_email,&_name{
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-top: 10px;
+    border: 1px solid #ddc7a7;
+    background-color: transparent;
+    color: #272727;
+    font-family: "pf_square_sans_proregular" !important;
+    font-size: 14px !important;
+    @include border-radius(10px);
+    &:active,&:focus{
+      outline: none !important;
+    }
+  }
+  &_text{
+    height: 130px;
+
+  }
+  &_email,&_name{
+    height: 60px;
+    padding-top: 0;
+  }
+  &_name{
+
+  }
+
+  &_submit{
+    width: 185px;
+    height: 58px;
+    @include border-radius(15px);
+    @include background-clip(padding-box);
+    border: none;
+    background-color: #fb8923;
+    @include box-shadow(0 1px 0 #d97607);
+    @include background-image(linear-gradient(bottom, #ff8501 0%, #ffa700 100%));
+    margin: 0 auto;
+    color: #fff;
+    font-family: "Arial" !important;
+    font-size: 20px !important;
+    @include text-shadow(-1px 0 0 rgba(0,0,0,.14));
+    display: block;
+    &:hover{
+      @include background-image(linear-gradient(bottom, #ffa700 0%, #ff8501 100%));
+    }
+    &:active,&:visited,&:focus{
+      outline: none !important;
+      font-size: 18px !important;
+    }
+  }
+}
+
+.icon_contact-us{
+  &__1,&__2,&__3,&__4{
+    width: 42px;
+    height: 42px;
+    background-color: #fb8923;
+    @include border-radius(50%);
+    &:focus{
+      outline:none;
+    }
+  }
+  &__1{
+    @include iconsfull(contact_us__1);
+    @extend %icon-inline;
+  }
+  &__2{
+    @include iconsfull(contact_us__2);
+    @extend %icon-inline;
+  }
+  &__3{
+    @include iconsfull(contact_us__3);
+    @extend %icon-inline;
+  }
+  &__4{
+    @include iconsfull(contact_us__4);
+    @extend %icon-inline;
+  }
+}

@@ -112,6 +112,46 @@ Flycats.common.page = {
         });
     },
 
+
+    map: function(selector){
+        var styles = [
+            {
+                "featureType": "road.highway",
+                "stylers": [
+                    { "color": "#ffc345" },
+                    { "weight": 7 }
+                ]
+            },{
+                "featureType": "road.arterial",
+                "stylers": [
+                    { "color": "#fffd8b" },
+                    { "weight": 5 }
+                ]
+            },{
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    { "visibility": "on" },
+                    { "color": "#000000" }
+                ]
+            },{
+                "featureType": "landscape.man_made",
+                "stylers": [
+                    { "color": "#ebe6dc" }
+                ]
+            },{
+                "featureType": "landscape.natural",
+                "stylers": [
+                    { "color": "#c9dfaf" }
+                ]
+            },{
+                "featureType": "administrative.country",
+                "stylers": [
+                    { "color": "#000000" }
+                ]
+            }
+        ];
+    },
     dropDowns: function (selector) {
 
         $(selector).on('click', function () {
@@ -298,6 +338,8 @@ Flycats.common.page = {
         $('.search-form-submit__input').on('click', function () {
             window.location.href = 'landing.html';
         });
+
+        $('#contactTabs').tabs();
 
         // city trim
 
