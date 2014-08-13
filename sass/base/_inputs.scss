@@ -65,6 +65,7 @@
     &.b-dropdown {
 //      float: left;
       outline: none;
+      cursor: pointer;
       .selecter-selected{
         @include box-shadow(0 1px 1px 0px rgba(0, 0, 0, 0.14));
       }
@@ -143,7 +144,7 @@
         cursor: pointer;
         text-align: center;
         font-size: 15px;
-
+        z-index: 59;
         &:hover {
           background-color: #fff3e5 !important;
           -moz-border-radius: 0;
@@ -469,9 +470,16 @@
     .route-location {
       float: left;
       margin-right: 20px;
+      max-width: 295px;
+      width: 100%;
       > span {
         color: #282828;
         font-size: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        max-width: 50%;
         > span {
           color: #fc8923;
         }

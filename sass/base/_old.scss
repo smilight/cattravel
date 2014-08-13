@@ -1660,4 +1660,49 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 115px;
+  display: inline-block;
 }
+
+
+
+  .ui-datepicker-prev,.ui-datepicker-next{
+    position: absolute;
+    top: 11px;
+    text-indent: -9999px;
+    overflow: hidden;
+    opacity: .8;
+    cursor: pointer;
+    &:hover{opacity: 1;}
+  }
+  .ui-datepicker-prev {
+    left: 15px;
+    @include new-sprite(slider_icon_prev1);
+    width: new-sprite-width(slider_icon_prev1);
+    height: new-sprite-height(slider_icon_prev1);
+  }
+  .ui-datepicker-next {
+    @include new-sprite(slider_icon_next1);
+    width: new-sprite-width(slider_icon_next1);
+    height: new-sprite-height(slider_icon_next1);
+    right: 15px;
+  }
+
+  .tab_city_name{
+    display: inline-block;
+    max-width: 55px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 8px;
+  }
+  .tab_doubledate{
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    &:first-child{
+      top: -4px;
+    }
+    +strong{
+      padding-left: 40px;
+    }
+  }

@@ -92,7 +92,7 @@ Flycats.common.page = {
                     var wrapper = $('<div/>')
                             .append('<span class=\"code\">' + item.code + '</span>')
                             .append('<span class=\"route-location\"/>');
-//                        label = wrapper.find('span.route-location').append('<span>' + output + ', <span/>').append(item.city);
+                        label = wrapper.find('span.route-location').append('<span>' + output + ', <span/>').append('<span>'+item.city+'</span>');
                     return $("<li>").addClass('b-route-list__item').append($("<a>").html(wrapper))
                         .appendTo(ul);
                 };
@@ -210,7 +210,9 @@ Flycats.common.page = {
                 },
                 $.datepicker.regional['ru']
             )
-        );
+        ).parent('.b-input').on('click','.icon__calendar,.b-input__help',function(){
+                $(this).parent().find('input.datepicker').datepicker( "show" );
+            });
 
 //        $(".option.language a").click(function(e) {
 //            e.preventDefault();
@@ -261,13 +263,14 @@ Flycats.common.page = {
 
         $('.share_hover').on('click', function (e) {
             e.preventDefault();
-            $(this).next('.social-panel').fadeToggle();
+            $(this).next('.social-panel').fadeIn();
         });
         $('.show-more-hover').on('click', function (e) {
             e.preventDefault();
 //            $('.show-all-modal__wr').fadeToggle();
             $('.show-all-modal__wr').addClass('show-all-modal__v');
-            $('body').css('overflow', 'hidden');
+            $('body').css({'overflow':'hidden','paddingRight':'17px'});
+            $('.b-header').css({'paddingRight':'17px'});
         });
 
         $('.slider a.hover-info').on('click', function (e) {
@@ -283,7 +286,7 @@ Flycats.common.page = {
 
         $('.social-panel .close').on('click', function (e) {
             e.preventDefault();
-            $('.social-panel').fadeToggle();
+            $('.social-panel').fadeOut();
         });
         $(document).mouseup(function (e) {
             var container = $(".dropdown");
@@ -291,7 +294,8 @@ Flycats.common.page = {
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 container.hide(0);
                 $('.show-all-modal__wr').removeClass('show-all-modal__v');
-                $('body').css('overflow', 'visible');
+                $('body').css({'overflow':'visible','paddingRight':'0'});
+                $('.b-header').css({'paddingRight':'0'});
             }
         });
     },
@@ -316,7 +320,9 @@ Flycats.common.page = {
         });
         $('.b-input_select.class').selecter({
             customClass: 'b-input b-input_middle b-dropdown class'
-        }).parent().append("<i class=\"input_icon__class\"/><span class=\"b-input__help\">Класс</span>");
+        }).parent().append("<i class=\"input_icon__class\"/><span class=\"b-input__help\">Класс</span>").on('click','.input_icon__class,.b-input__help',function(){
+            $(this).parent().find('.selecter-selected').click()
+        });
 
         $('.b-input__checkbox').each(function () {
             $(this).icheck({

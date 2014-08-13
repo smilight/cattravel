@@ -2,9 +2,16 @@
 
 
 body,html {
+  background: none;
   @include filter-gradient(#faf0c8, #ffffff, vertical);
-
+  background-color: transparent;
 }
+.landing_page .last_block, .landing_page .buy_block, .landing_page .first_block{
+
+  @include filter-gradient(#faf0c8, #ffffff, vertical);
+  background-color: transparent;
+}
+
 ::-ms-clear { display: none;
   width: 0;
   height: 0;}
@@ -131,13 +138,13 @@ input[type=text]::-ms-clear { display: none;
 
 #header {
   &.scrollable {
-    @include filter-gradient(#fefcf3, #fffefa, vertical);
+//    @include filter-gradient(#fefcf3, #fffefa, vertical);
 
   }
 }
 
 .landing_page .last_block, .landing_page .buy_block, .landing_page .first_block, #lightbox-overlay {
-  @include filter-gradient(#fdf8e4, #ffffff, vertical);
+//  @include filter-gradient(#fdf8e4, #ffffff, vertical);
 }
 
 .buy-box__fautered {
@@ -147,4 +154,10 @@ input[type=text]::-ms-clear { display: none;
 .landing_page .last_block > *, .landing_page .buy_block > *, .landing_page .first_block > *{
   z-index: 1;
   position: relative;
+}
+
+#wrapper {
+  display: block;
+  position: relative;
+  z-index: 11;
 }
